@@ -1,6 +1,6 @@
 from functools import wraps
 
-from assertions import assert_valid
+from cherry_ua.assertions import assert_valid
 
 
 def validate_response(func):

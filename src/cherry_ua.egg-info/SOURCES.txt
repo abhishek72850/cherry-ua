@@ -3,7 +3,14 @@ README.md
 pyproject.toml
 setup.cfg
 src/cherry_ua/__init__.py
-src/cherry_ua/main.py
+src/cherry_ua/assertions.py
+src/cherry_ua/cherry.py
+src/cherry_ua/constants.py
+src/cherry_ua/decorators.py
+src/cherry_ua/exceptions.py
+src/cherry_ua/network.py
+src/cherry_ua/utils.py
+src/cherry_ua/validator.py
 src/cherry_ua.egg-info/PKG-INFO
 src/cherry_ua.egg-info/SOURCES.txt
 src/cherry_ua.egg-info/dependency_links.txt

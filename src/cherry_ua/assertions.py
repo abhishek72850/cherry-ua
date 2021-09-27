@@ -1,5 +1,6 @@
-from exceptions import CherryException
 from typing import List, Dict, Type
+
+from cherry_ua.exceptions import CherryException
 
 
 def assert_valid(condition: Type[bool], message: Type[str]):
