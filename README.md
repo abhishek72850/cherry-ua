@@ -105,6 +105,9 @@ operator chaining are:
 | set_search_filters() | Sets multiple search parameters |
 
 
+# Donate
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/abhishek728?locale.x=en_GB)
+
 
 
 
