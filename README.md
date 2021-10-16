@@ -6,29 +6,32 @@
 -----------------------------
 
 # Cherry UserAgent (cherry-ua)
-This is an advanced random user agent generator python library, the user agents can be generated
+This is an advanced search and generate user agent python library, the user agents can be generated
 based on various search parameters, it supports an advanced form of applying search filters.
 
 ## Database
-It uses [Whatismybrowser](https://developers.whatismybrowser.com/useragents/database/) database which
+It uses [Whatismybrowser](https://developers.whatismybrowser.com/useragents/database/) **premium** database which
 consists of more than `91+ Million` user agents, which ensures everytime it generates unique random user agents.
 
 ## Compatibility
 The library uses as much as possible inbuilt modules, so it support all major python version.
 
 ## Installation
-```
-pip install cherry-ua
-```
+  ```
+  pip install fake-useragent
+  ```
 
-## Usage
-- The simplest of way to use this library is:
+
+Usage
+-----
+- The simplest way to use this library is:
   ```
   from cherry_ua import UserAgent
 
   ua = UserAgent()
   ua.get_random()
   ```
+  
 - To refresh the User Agent dataset
   ```
   ua.refresh()
@@ -199,10 +202,11 @@ the operators it supports are:
     ua.set('device', "ne('mobile')")
     # matches user agent whose device is not equal to mobile
     ```
-  - `contains`
+  - `contains` (beta)
 
     *Supported datatype* : `String` <br>
     *Description* : This operator matches if the field value contains the given value
+    > This is still is beta stage, so might not work as you expect
     ```
     ua.set('device', "eq('mobile')")
     # matches user agent whose device contains the word "mobile"
@@ -237,18 +241,29 @@ operator chaining are:
     ```
 
 ## UserAgent class Functions
-| **Function** | **Description** |
-| --- | --- |
-| **get_random()** | Returns random user agent based on given search parameters if given. |
-| **refresh()** | Download and loads fresh set of User agent |
-| **size()** | Return size of user agent downloaded dataset |
-| **get()** | Returns value of given search parameters |
-| **set()** | Sets specific given search parameter |
-| **get_all_filters()** | Returns all the search filters |
-| **set_search_filters()** | Sets multiple search parameters |
+| **Function** | **Parameters** | **Description** | **Returns** |
+| --- | --- | --- | --- |
+| **get_random()** | | Returns random user agent based on given search parameters if given. | *String* |
+| **refresh()** | | Download and loads fresh set of User agent |  |
+| **size()** | | Return size of user agent downloaded dataset | *Integer* |
+| **get()** | *(filter_name : str)* | Returns value of given search parameters | *String* |
+| **set()** | *(filter_name : str, query : str)* | Sets specific given search parameter |  |
+| **get_all_filters()** | | Returns all the search filters | *Dict* |
+| **set_search_filters()** | (**kwargs**) | Sets multiple search parameters |  |
 
 
-# Donate
+# Issues
+If facing any issues in the library usage, please feel free to raise the issue in github [issue tracker](https://github.com/abhishek72850/cherry-ua/issues),
+since i am the only sole developer of this project it might get delayed to get it resolved but i'll
+definetly try to resolve it.
+
+
+# Donate :pray:
+This library itself doesn't need much maintenance, but since i am using a premium server to ensure faster and better API
+performance to search and get user agents, so i have to pay bills to keep it running, as i committed to keep it running 
+but with a certain limitation, which i will remove if i get enough donation to support this open source project and also 
+i will publish the server side code once it gets enough popularity so that others can also look into it, and may suggest some
+improvements.
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/abhishek728?locale.x=en_GB)
 
 
