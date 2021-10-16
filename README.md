@@ -62,47 +62,190 @@ pip install cherry-ua
 The `UserAgent` class support's multiple search parameters which can be used to get only
 the user agent which satisfies your requirements. The parameters are:
   - `device`
-    datatype : String
+  
+    *Datatype* : String <br>
+    *Supported Operators* : `eq`, `ne`, `contains` <br>
+    *Description* : This Signifies for which type of device you want user agent for.
+    ```
+    ua = UserAgent(device="eq('mobile')")
+    # or
+    ua.set('device', "eq('mobile')")
+    # or
+    ua.set_search_filters(device="eq('mobile')")
+    ```
   - `os_name`
-    datatype : String
+
+    *Datatype* : String <br>
+    *Supported Operators* : `eq`, `ne`, `contains` <br>
+    *Description* : This Signifies for which OS (operating system) you want user agent for.
+    ```
+    ua = UserAgent(os_name="eq('windows')")
+    # or
+    ua.set('os_name', "eq('windows')")
+    # or
+    ua.set_search_filters(os_name="eq('windows')")
+    ```
   - `os_version`
-    datatype : Integer
+
+    *Datatype* : Integer <br>
+    *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
+    *Description* : This Signifies for which OS version you want user agent for.
+    > This is an Integer field, so it won't take quotes inside the operator's
+    ```
+    ua = UserAgent(os_version="eq(8)")
+    # or
+    ua.set('os_version', "eq(8)")
+    # or
+    ua.set_search_filters(os_version="eq(8)")
+    ```
   - `browser`
-    datatype : String
+
+    *Datatype* : String <br>
+    *Supported Operators* : `eq`, `ne`, `contains` <br>
+    *Description* : This Signifies for which browser you want user agent for.
+    ```
+    ua = UserAgent(browser="eq('chrome')")
+    # or
+    ua.set('browser', "eq('chrome')")
+    # or
+    ua.set_search_filters(browser="eq('chrome')")
+    ```
   - `browser_engine`
-    datatype : String
+
+    *Datatype* : String <br>
+    *Supported Operators* : `eq`, `ne`, `contains` <br>
+    *Description* : This Signifies for which type of device you want user agent for.
+    ```
+    ua = UserAgent(browser_engine="eq('blink')")
+    # or
+    ua.set('browser_engine', "eq('blink')")
+    # or
+    ua.set_search_filters(browser_engine="eq('blink')")
+    ```
   - `browser_version`
-    datatype : Integer
+
+    *Datatype* : Integer <br>
+    *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
+    *Description* : This Signifies for which type of device you want user agent for.
+    ```
+    ua = UserAgent(browser_version="eq(90)")
+    # or
+    ua.set('browser_version', "eq(90)")
+    # or
+    ua.set_search_filters(browser_version="eq(90)")
+    ```
   - `limit`
-    datatype : Integer
+
+    *Datatype* : Integer <br>
+    *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
+    *Description* : This Signifies for which type of device you want user agent for.
+    ```
+    ua = UserAgent(limit=1000)
+    # or
+    ua.set('limit', 1000)
+    # or
+    ua.set_search_filters(limit=1000)
+    ```
 
 ## Search Filter Operators
 To add the support for relative searching the filter's support some operators
 just like SQL, which gives the flexibility to seearch in more customized way,
 the operators it supports are:
   - `eq`
+ 
+    *Supported datatype* : `String`, `Integer` <br>
+    *Description* : This operator matches the exact value given
+    ```
+    ua.set('device', "eq('mobile')")
+    # matches user agent whose device is mobile
+    ```
   - `lt`
+
+    *Supported datatype* : `Integer` <br>
+    *Description* : This operator matches if the value of field is less than the given value
+    ```
+    ua.set('os_version', "lt(8)")
+    # matches user agent whose os version is less than 8
+    ```
   - `gt`
+
+    *Supported datatype* : `Integer` <br>
+    *Description* : This operator matches if the value of field is greater than the given value
+    ```
+    ua.set('os_version', "gt(8)")
+    # matches user agent whose os version is greater than 8
+    ```
   - `lte`
+
+    *Supported datatype* : `Integer` <br>
+    *Description* : This operator matches if the value of field is less or equal to the given value
+    ```
+    ua.set('os_version', "lte(8)")
+    # matches user agent whose os version is less or equal to 8
+    ```
   - `gte`
+
+    *Supported datatype* : `Integer` <br>
+    *Description* : This operator matches if the value of field is greater or equal to the given value
+    ```
+    ua.set('os_version', "gte(8)")
+    # matches user agent whose os version is greater or equal to 8
+    ```
   - `ne`
+
+    *Supported datatype* : `String`, `Integer` <br>
+    *Description* : This operator matches if the value of field is not equal to the given value
+    ```
+    ua.set('device', "ne('mobile')")
+    # matches user agent whose device is not equal to mobile
+    ```
+  - `contains`
+
+    *Supported datatype* : `String` <br>
+    *Description* : This operator matches if the field value contains the given value
+    ```
+    ua.set('device', "eq('mobile')")
+    # matches user agent whose device contains the word "mobile"
+    ```
 
 ## Operator Chaining
 The filter query also supports if you want to chain multiple operators, the supported
 operator chaining are:
   - `and`
+
+    *Description* : The "and" operator chains multiple operator describing as it should
+    matches all the operator values.
+    ```
+    ua.set('device', "ne('mobile').and.ne('pc')")
+    # It matches user agent which has device value not equal to mobile and pc
+    
+    # It can also be used to chaining multiple different operators
+    ua.set('os_version', "gt(5).and.lt(8)")
+    # It matches user agents which has os version greater than 5 and less than 8
+    ```
   - `or`
 
+    *Description* : The "or" operator chains multiple operator describing as it should
+    matches any one of the operator values.
+    ```
+    ua.set('device', "ne('mobile').or.ne('pc')")
+    # It matches user agent which has device value not equal to mobile or pc
+    
+    # It can also be used to chaining multiple different operators
+    ua.set('os_version', "eq(5).or.gt(8)")
+    # It matches user agents which has os version equal to 5 or greater than 8
+    ```
+
 ## UserAgent class Functions
-| Function | Description |
+| **Function** | **Description** |
 | --- | --- |
-| get_random() | Returns random user agent based on given search parameters if given. |
-| refresh() | Download and loads fresh set of User agent |
-| size() | Return size of user agent downloaded dataset |
-| get() | Returns value of given search parameters |
-| set() | Sets specific given search parameter |
-| get_all_filters() | Returns all the search filters |
-| set_search_filters() | Sets multiple search parameters |
+| **get_random()** | Returns random user agent based on given search parameters if given. |
+| **refresh()** | Download and loads fresh set of User agent |
+| **size()** | Return size of user agent downloaded dataset |
+| **get()** | Returns value of given search parameters |
+| **set()** | Sets specific given search parameter |
+| **get_all_filters()** | Returns all the search filters |
+| **set_search_filters()** | Sets multiple search parameters |
 
 
 # Donate
