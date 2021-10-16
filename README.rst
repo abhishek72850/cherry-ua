@@ -348,9 +348,5 @@ but with a certain limitation, which i will remove if i get enough donation to s
 i will publish the server side code once it gets enough popularity so that others can also look into it, and may suggest some
 improvements.
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/abhishek728?locale.x=en_GB)
-
-
-
-
-
+.. image:: https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
+    :target: https://paypal.me/abhishek728?locale.x=en_GB
