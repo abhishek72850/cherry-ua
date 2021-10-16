@@ -1,3 +1,6 @@
+[![Build][build-shield]][build-url]
+[![Code Coverage][code-coverage-shield]][code-coverage-url]
+[![Pypi][pypi-shield]][pypi-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -268,7 +271,12 @@ improvements.
 
 
 
-
+[build-shield]: https://img.shields.io/travis/abhishek72850/cherry-ua.svg?style=for-the-badge
+[build-ur;]: https://travis-ci.org/abhishek72850/cherry-ua
+[code-coverage-shield]: https://img.shields.io/codecov/c/github/abhishek72850/cherry-ua/master?style=for-the-badge
+[code-coverage-url]: https://codecov.io/gh/abhishek72850/cherry-ua
+[pypi-shield]: https://img.shields.io/pypi/v/cherry-ua.svg?style=for-the-badge
+[pypi-url]: https://pypi.python.org/pypi/cherry-ua
 [contributors-shield]: https://img.shields.io/github/contributors/abhishek72850/cherry-ua.svg?style=for-the-badge
 [contributors-url]: https://github.com/abhishek72850/cherry-ua/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/abhishek72850/cherry-ua.svg?style=for-the-badge
