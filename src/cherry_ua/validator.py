@@ -2,11 +2,12 @@
     Query Validator
 '''
 import re
+from typing import Type
 
 from cherry_ua.assertions import assert_valid
 
 
-def query_validator(device, os_name, os_version, browser, browser_engine, browser_version, limit):
+def query_validator(device: Type[str], os_name: Type[str], os_version: Type[str], browser: Type[str], browser_engine: Type[str], browser_version: Type[str], limit: Type[int]):
     str_query_pattern = r'((ne|eq|contains)\(\'[A-z0-9_]+\'\))(((\.(or|and)\.)((ne|eq|contains)\(\'[A-z0-9_]+\'\)))*)'
     int_query_pattern = r'((ne|eq|lte|gte|lt|gt)\(\d+\))(((\.(or|and)\.)((ne|eq|lte|gte|lt|gt)\(\d+\)))*)'
     limit_pattern = r'\d{1,5}'

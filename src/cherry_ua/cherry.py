@@ -1,8 +1,9 @@
-import json
 import os
+import ast
+import json
 import random
 from types import MethodType
-from typing import Dict, List, Type
+from typing import List, Optional, Type
 
 from cherry_ua.constants import UA
 from cherry_ua.network import Network
@@ -30,32 +31,39 @@ class UserAgent(Network):
         self._browser_engine = browser_engine
         self._browser_version = browser_version
         self._limit = limit
+        self._ua_list = []
 
         self.__set_paths()
         self.__initialize()
 
     def refresh(self):
         self._ua_list = self.__download_ua()
+        
+        # Unescaping user-agents
+        for index, ua in enumerate(self._ua_list):
+            if ('\"' in ua):
+                self._ua_list[index] = ast.literal_eval(ua)
+
         self.__save_ua_filters()
         self.__save_ua_db()
 
-    def get_random(self):
+    def get_random(self) -> Optional[str]:
         return random.choice(self._ua_list)
 
     def set_search_filters(self, **kwargs):
         for key, value in kwargs:
             self.__setattr__('_{}'.format(key), value)
 
-    def get_all_filters(self):
+    def get_all_filters(self) -> dict:
         return self.__build_search_params()
 
-    def get(self, filter_name):
+    def get(self, filter_name: str) -> str:
         return self.__getattribute__('_{}'.format(filter_name))
 
-    def set(self, filter_name, value):
+    def set(self, filter_name: str, value: str):
         self.__setattr__('_{}'.format(filter_name), value)
 
-    def size(self):
+    def size(self) -> int:
         return len(self._ua_list)
 
     def __initialize(self):
@@ -74,7 +82,7 @@ class UserAgent(Network):
         else:
             self.__load_ua_db()
 
-    def __is_filter_changed(self):
+    def __is_filter_changed(self) -> bool:
         changed = False
         with open(self._ua_filters_path, 'r') as file:
             filters = json.load(file)
@@ -106,16 +114,16 @@ class UserAgent(Network):
         with open(self._ua_filters_path, 'w') as file:
             json.dump(self.__build_search_params(), file)
 
-    def __is_local_db_exist(self):
+    def __is_local_db_exist(self) -> bool:
         return os.path.exists(self._ua_path)
 
-    def __download_ua(self):
+    def __download_ua(self) -> List[str]:
         query_params = self.__build_search_params()
         api_data = self.get_request(url=UA.UA_API, query_params=query_params)
 
-        return api_data['data']
+        return api_data.get('data', [])
 
-    def __build_search_params(self):
+    def __build_search_params(self) -> dict:
         params = {
             'device': self._device,
             'os_name': self._os_name,

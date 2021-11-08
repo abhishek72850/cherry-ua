@@ -1,4 +1,4 @@
-from typing import List, Dict, Type
+from typing import Type
 
 from cherry_ua.exceptions import CherryException
 
