@@ -272,7 +272,7 @@ improvements.
 
 
 [build-shield]: https://img.shields.io/travis/abhishek72850/cherry-ua.svg?style=for-the-badge
-[build-ur;]: https://travis-ci.org/abhishek72850/cherry-ua
+[build-url]: https://travis-ci.org/abhishek72850/cherry-ua
 [code-coverage-shield]: https://img.shields.io/codecov/c/github/abhishek72850/cherry-ua/master?style=for-the-badge
 [code-coverage-url]: https://codecov.io/gh/abhishek72850/cherry-ua
 [pypi-shield]: https://img.shields.io/pypi/v/cherry-ua.svg?style=for-the-badge
