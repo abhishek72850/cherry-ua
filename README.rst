@@ -186,6 +186,8 @@ the user agent which satisfies your requirements. The parameters are:
   | *Datatype* : Integer
   | *Supported Operators* : ``eq``, ``lt``, ``lte``, ``gt``, ``gte``, ``ne``
   | *Description* : This Signifies for which type of device you want user agent for.
+  
+  ``Note: Limit should be in the range of 1-10000``
 
 .. code-block:: python
   
@@ -202,6 +204,8 @@ Search Filter Operators
 To add the support for relative searching the filter's support some operators
 just like SQL, which gives the flexibility to seearch in more customized way,
 the operators it supports are:
+
+``Note: More complex filter can result in less number of user agents as compared to what limit is set``
 
 * ``eq``
 

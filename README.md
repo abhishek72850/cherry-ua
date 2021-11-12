@@ -143,8 +143,10 @@ the user agent which satisfies your requirements. The parameters are:
   - `limit`
 
     *Datatype* : Integer <br>
+    *Default* : 1000 <br>
     *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
-    *Description* : This Signifies for which type of device you want user agent for.
+    *Description* : This Signifies for which type of device you want user agent for. <br>
+    `Note: Limit should be in the range of 1-10000`
     ```
     ua = UserAgent(limit=1000)
     # or
@@ -157,6 +159,7 @@ the user agent which satisfies your requirements. The parameters are:
 To add the support for relative searching the filter's support some operators
 just like SQL, which gives the flexibility to seearch in more customized way,
 the operators it supports are:
+`Note: More complex filter can result in less number of user agents as compared to what limit is set`
   - `eq`
  
     *Supported datatype* : `String`, `Integer` <br>
