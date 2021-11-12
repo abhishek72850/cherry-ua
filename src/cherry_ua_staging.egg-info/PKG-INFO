@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: cherry-ua-staging
+Version: 0.0.3
+Summary: A library to generate random user-agent
+Home-page: https://github.com/abhishek72850/cherry-ua/tree/staging
+Author: Abhishek Kumar
+Author-email: abhishekk728@yahoo.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/abhishek72850/cherry-ua/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 [![Build][build-shield]][build-url]
 [![Code Coverage][code-coverage-shield]][code-coverage-url]
 [![Pypi][pypi-shield]][pypi-url]
@@ -288,4 +305,6 @@ improvements.
 [stars-url]: https://github.com/abhishek72850/cherry-ua/stargazers
 [issues-shield]: https://img.shields.io/github/issues/abhishek72850/cherry-ua.svg?style=for-the-badge
 [issues-url]: https://github.com/abhishek72850/cherry-ua/issues
+
+
 
