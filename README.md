@@ -145,7 +145,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : Integer <br>
     *Default* : 1000 <br>
     *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
-    *Description* : This Signifies for which type of device you want user agent for.
+    *Description* : This Signifies for which type of device you want user agent for. <br>
     `Note: Limit should be in the range of 1-10000`
     ```
     ua = UserAgent(limit=1000)
