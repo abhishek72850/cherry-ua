@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: cherry-ua
-Version: 0.0.2
+Version: 0.0.3
 Summary: A library to generate random user-agent
-Home-page: https://github.com/abhishek72850/cherry-ua
+Home-page: https://github.com/abhishek72850/cherry-ua/tree/master
 Author: Abhishek Kumar
 Author-email: abhishekk728@yahoo.com
 License: UNKNOWN

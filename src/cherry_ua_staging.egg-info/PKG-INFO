@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: cherry-ua-staging
-Version: 0.0.3
+Version: 0.0.4
 Summary: A library to generate random user-agent
-Home-page: https://github.com/abhishek72850/cherry-ua/tree/staging
+Home-page: https://github.com/abhishek72850/cherry-ua/tree/master
 Author: Abhishek Kumar
 Author-email: abhishekk728@yahoo.com
 License: UNKNOWN
