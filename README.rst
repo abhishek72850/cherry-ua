@@ -22,17 +22,17 @@
 -----------------------------
 
 Cherry UserAgent (cherry-ua)
-==============
+============================
 This is an advanced search and generate user agent python library, the user agents can be generated
 based on various search parameters, it supports an advanced form of applying search filters.
 
 Database
 --------
-It uses [Whatismybrowser](https://developers.whatismybrowser.com/useragents/database/) **premium** database which
+It uses `Whatismybrowser <https://developers.whatismybrowser.com/useragents/database/>` **premium** database which
 consists of more than `91+ Million` user agents, which ensures everytime it generates unique random user agents.
 
 Compatibility
-------------
+-------------
 The library uses as much as possible inbuilt modules, so it support all major python version.
 
 Installation
@@ -66,6 +66,7 @@ Usage
     ua.size()
   
 - To get specifc search filter query
+
 .. code-block:: python
   
     ua.get('device')
@@ -123,12 +124,13 @@ the user agent which satisfies your requirements. The parameters are:
     ua.set('os_name', "eq('windows')")
     # or
     ua.set_search_filters(os_name="eq('windows')")
-    ```
+
 * ``os_version``
 
   | *Datatype* : Integer
   | *Supported Operators* : ``eq``, ``lt``, ``lte``, ``gt``, ``gte``, ``ne``
   | *Description* : This Signifies for which OS version you want user agent for.
+
   > This is an Integer field, so it won't take quotes inside the operator's
 
 .. code-block:: python
@@ -271,6 +273,7 @@ the operators it supports are:
 
   | *Supported datatype* : ``String``
   | *Description* : This operator matches if the field value contains the given value
+
   > This is still is beta stage, so might not work as you expect
 
 .. code-block:: python
@@ -338,13 +341,13 @@ UserAgent class Functions
 Issues
 ------
 
-If facing any issues in the library usage, please feel free to raise the issue in github [issue tracker](https://github.com/abhishek72850/cherry-ua/issues),
+If facing any issues in the library usage, please feel free to raise the issue in github `issue tracker <https://github.com/abhishek72850/cherry-ua/issues>`,
 since i am the only sole developer of this project it might get delayed to get it resolved but i'll
 definetly try to resolve it.
 
 
 Donate :pray:
-------
+-------------
 
 This library itself doesn't need much maintenance, but since i am using a premium server to ensure faster and better API
 performance to search and get user agents, so i have to pay bills to keep it running, as i committed to keep it running 

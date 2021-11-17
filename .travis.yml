@@ -1,0 +1,26 @@
+dist: trusty
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
+install:
+  - pip install -U setuptools
+  - pip install -U pip
+  - pip install -U wheel
+after_success:
+  - pip install codecov
+  - codecov
+cache: pip
+notifications:
+  email: false
+deploy:
+  provider: pypi
+  user: __token__
+  password: $STAGING_TOKEN
+  server: https://test.pypi.org/legacy/
+  distributions: "sdist bdist_wheel"
+  on:
+    branch: staging
+    condition: $TRAVIS_PYTHON_VERSION = "3.8"
