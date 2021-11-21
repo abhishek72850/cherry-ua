@@ -19,5 +19,5 @@ deploy:
   server: https://test.pypi.org/legacy/
   distributions: "sdist bdist_wheel"
   on:
-    branch: staging
+    branch: master
     condition: $TRAVIS_PYTHON_VERSION = "3.8"
