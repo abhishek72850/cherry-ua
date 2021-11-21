@@ -39,10 +39,10 @@ class UserAgent(Network):
     def refresh(self):
         self._ua_list = self.__download_ua()
         
-        # Unescaping user-agents
-        for index, ua in enumerate(self._ua_list):
-            if ('\"' in ua):
-                self._ua_list[index] = ast.literal_eval(ua)
+        # # Unescaping user-agents
+        # for index, ua in enumerate(self._ua_list):
+        #     if ('\"' in ua):
+        #         self._ua_list[index] = ast.literal_eval(ua)
 
         self.__save_ua_filters()
         self.__save_ua_db()

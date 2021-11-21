@@ -21,7 +21,7 @@ The library uses as much as possible inbuilt modules, so it support all major py
 
 ## Installation
   ```
-  pip install fake-useragent
+  pip install cherry-ua
   ```
 
 
