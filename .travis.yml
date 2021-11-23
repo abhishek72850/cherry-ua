@@ -1,24 +1,21 @@
 dist: xenial
 language: python
 python:
-  - "3.8"
+- '3.8'
 install:
-  - pip install -U setuptools
-  - pip install -U pip
-  - pip install -U wheel
-  - python -m build
-after_success:
-  - pip install codecov
-  - codecov
+- pip install -U setuptools
+- pip install -U pip
+- pip install -U wheel
 cache: pip
 notifications:
   email: false
 deploy:
   provider: pypi
   user: __token__
-  password: $STAGING_TOKEN
-  server: https://test.pypi.org/legacy/
-  distributions: "sdist bdist_wheel"
+  password:
+    secure: luG+0eAfJfHxOunVqrlno/Heg4uB7GPX9gC2vL1rAAUbWZch4eAgIPO7KG1Mtq6XbprYmCMUG0CYzVDUQ5lIRLhj5oilRwmoRGBUMlmOUb0UAVs+bgt467QiZsgSpAXd+JFo2suoaIawx+UjHxcqRXF9aiqYczHB6NqxphdsyTXqqkswhBk/sxHb4gskHoJeftZegBV+zemKxTsUzJfnf/74DUDwUa4BnGxUr70ERRtNbZwKovsYY82wOrL8RKbIawPTRO2TEZDl3TvewdLL7Ha7uJMZRoS0ivWOpKqQm0OOZnKDNJUzaU7eQiOFDZnrrk+GAao9QgyrH4lXu2iHBeQxRUB1ne1UskkDpfb0B586VcPTISxjq6AxnUO3IKzNQEQ7rk5ku0CrdOuiPPXYLW/6DhzWX3Xmu09MXcbcwHnZpn9jPCaPUxbfwlYDCibouW9sReWqQsgJectXeS3CsM+Cgc+qRYUuX59HY5xcoZZMHiGbgCHwEkIDknl9CKKZ3WAj59QOwypdpN7qmdLtVel80qN7/s2rHYhXwBN7QRtRVpfE+ELDMpFeKvizV9ZFduqL10W5cdamPntrPFS8Q12torADzXf/SvU6KwmtIA5fK2Q0+CGSjcnqP8ydaarMtJNheeepvYx/UVyfuztiolnm1RxymrNT1AMU+AsxkBw=
+  distributions: sdist bdist_wheel
   on:
+    tags: true
     branch: master
-    condition: $TRAVIS_PYTHON_VERSION = "3.8"
+    python: 3.8
