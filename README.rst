@@ -28,7 +28,7 @@ based on various search parameters, it supports an advanced form of applying sea
 
 Database
 --------
-It uses `Whatismybrowser <https://developers.whatismybrowser.com/useragents/database/>` **premium** database which
+It uses `Whatismybrowser <https://developers.whatismybrowser.com/useragents/database/>`_ **premium** database which
 consists of more than `91+ Million` user agents, which ensures everytime it generates unique random user agents.
 
 Compatibility
@@ -39,7 +39,7 @@ Installation
 ------------
 .. code-block:: shell
 
-    pip install fake-useragent
+    pip install cherry-ua
 
 
 Usage
@@ -341,7 +341,7 @@ UserAgent class Functions
 Issues
 ------
 
-If facing any issues in the library usage, please feel free to raise the issue in github `issue tracker <https://github.com/abhishek72850/cherry-ua/issues>`,
+If facing any issues in the library usage, please feel free to raise the issue in github `issue tracker <https://github.com/abhishek72850/cherry-ua/issues>`_,
 since i am the only sole developer of this project it might get delayed to get it resolved but i'll
 definetly try to resolve it.
 
