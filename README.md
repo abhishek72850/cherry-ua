@@ -28,7 +28,7 @@ The library uses as much as possible inbuilt modules, so it support all major py
 Usage
 -----
 - The simplest way to use this library is:
-  ```
+  ```python
   from cherry_ua import UserAgent
 
   ua = UserAgent()
@@ -36,27 +36,27 @@ Usage
   ```
   
 - To refresh the User Agent dataset
-  ```
+  ```python
   ua.refresh()
   ```
 - To get the size of User Agent dataset
-  ```
+  ```python
   ua.size()
   ```
 - To get specifc search filter query
-  ```
+  ```python
   ua.get('device')
   ```
 - To set specific search filter query
-  ```
+  ```python
   ua.set('device', 'eq("mobile")')
   ```
 - To get all the search filters
-  ```
+  ```python
   ua.get_all_filters()
   ```
 - To set multiple searcg filter queries
-  ```
+  ```python
   ua.set_search_filters(device='eq("mobile")')
   ```
 
@@ -72,7 +72,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : String <br>
     *Supported Operators* : `eq`, `ne`, `contains` <br>
     *Description* : This Signifies for which type of device you want user agent for.
-    ```
+    ```python
     ua = UserAgent(device="eq('mobile')")
     # or
     ua.set('device', "eq('mobile')")
@@ -84,7 +84,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : String <br>
     *Supported Operators* : `eq`, `ne`, `contains` <br>
     *Description* : This Signifies for which OS (operating system) you want user agent for.
-    ```
+    ```python
     ua = UserAgent(os_name="eq('windows')")
     # or
     ua.set('os_name', "eq('windows')")
@@ -97,7 +97,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
     *Description* : This Signifies for which OS version you want user agent for.
     > This is an Integer field, so it won't take quotes inside the operator's
-    ```
+    ```python
     ua = UserAgent(os_version="eq(8)")
     # or
     ua.set('os_version', "eq(8)")
@@ -109,7 +109,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : String <br>
     *Supported Operators* : `eq`, `ne`, `contains` <br>
     *Description* : This Signifies for which browser you want user agent for.
-    ```
+    ```python
     ua = UserAgent(browser="eq('chrome')")
     # or
     ua.set('browser', "eq('chrome')")
@@ -121,7 +121,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : String <br>
     *Supported Operators* : `eq`, `ne`, `contains` <br>
     *Description* : This Signifies for which type of device you want user agent for.
-    ```
+    ```python
     ua = UserAgent(browser_engine="eq('blink')")
     # or
     ua.set('browser_engine', "eq('blink')")
@@ -133,7 +133,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Datatype* : Integer <br>
     *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
     *Description* : This Signifies for which type of device you want user agent for.
-    ```
+    ```python
     ua = UserAgent(browser_version="eq(90)")
     # or
     ua.set('browser_version', "eq(90)")
@@ -147,7 +147,7 @@ the user agent which satisfies your requirements. The parameters are:
     *Supported Operators* : `eq`, `lt`, `lte`, `gt`, `gte`, `ne` <br>
     *Description* : This Signifies for which type of device you want user agent for. <br>
     `Note: Limit should be in the range of 1-10000`
-    ```
+    ```python
     ua = UserAgent(limit=1000)
     # or
     ua.set('limit', 1000)
@@ -164,7 +164,7 @@ the operators it supports are:
  
     *Supported datatype* : `String`, `Integer` <br>
     *Description* : This operator matches the exact value given
-    ```
+    ```python
     ua.set('device', "eq('mobile')")
     # matches user agent whose device is mobile
     ```
@@ -172,7 +172,7 @@ the operators it supports are:
 
     *Supported datatype* : `Integer` <br>
     *Description* : This operator matches if the value of field is less than the given value
-    ```
+    ```python
     ua.set('os_version', "lt(8)")
     # matches user agent whose os version is less than 8
     ```
@@ -180,7 +180,7 @@ the operators it supports are:
 
     *Supported datatype* : `Integer` <br>
     *Description* : This operator matches if the value of field is greater than the given value
-    ```
+    ```python
     ua.set('os_version', "gt(8)")
     # matches user agent whose os version is greater than 8
     ```
@@ -188,7 +188,7 @@ the operators it supports are:
 
     *Supported datatype* : `Integer` <br>
     *Description* : This operator matches if the value of field is less or equal to the given value
-    ```
+    ```python
     ua.set('os_version', "lte(8)")
     # matches user agent whose os version is less or equal to 8
     ```
@@ -196,7 +196,7 @@ the operators it supports are:
 
     *Supported datatype* : `Integer` <br>
     *Description* : This operator matches if the value of field is greater or equal to the given value
-    ```
+    ```python
     ua.set('os_version', "gte(8)")
     # matches user agent whose os version is greater or equal to 8
     ```
@@ -204,7 +204,7 @@ the operators it supports are:
 
     *Supported datatype* : `String`, `Integer` <br>
     *Description* : This operator matches if the value of field is not equal to the given value
-    ```
+    ```python
     ua.set('device', "ne('mobile')")
     # matches user agent whose device is not equal to mobile
     ```
@@ -213,7 +213,7 @@ the operators it supports are:
     *Supported datatype* : `String` <br>
     *Description* : This operator matches if the field value contains the given value
     > This is still is beta stage, so might not work as you expect
-    ```
+    ```python
     ua.set('device', "eq('mobile')")
     # matches user agent whose device contains the word "mobile"
     ```
@@ -225,7 +225,7 @@ operator chaining are:
 
     *Description* : The "and" operator chains multiple operator describing as it should
     matches all the operator values.
-    ```
+    ```python
     ua.set('device', "ne('mobile').and.ne('pc')")
     # It matches user agent which has device value not equal to mobile and pc
     
@@ -237,7 +237,7 @@ operator chaining are:
 
     *Description* : The "or" operator chains multiple operator describing as it should
     matches any one of the operator values.
-    ```
+    ```python
     ua.set('device', "ne('mobile').or.ne('pc')")
     # It matches user agent which has device value not equal to mobile or pc
     
