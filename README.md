@@ -263,7 +263,7 @@ If facing any issues in the library usage, please feel free to raise the issue i
 since i am the only sole developer of this project it might get delayed to get it resolved but i'll
 definetly try to resolve it.
 
-
+<!--
 # Donate :pray:
 This library itself doesn't need much maintenance, but since i am using a premium server to ensure faster and better API
 performance to search and get user agents, so i have to pay bills to keep it running, as i committed to keep it running 
@@ -271,6 +271,7 @@ but with a certain limitation, which i will remove if i get enough donation to s
 i will publish the server side code once it gets enough popularity so that others can also look into it, and may suggest some
 improvements.
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/abhishek728?locale.x=en_GB)
+-->
 
 
 
