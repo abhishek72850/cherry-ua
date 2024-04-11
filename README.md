@@ -1,5 +1,5 @@
 [![Build][build-shield]][build-url]
-[![downloads](https://img.shields.io/pypi/dm/cherry-ua.svg)](https://pypi.python.org/pypi/cherry-ua)
+[![Downloads](https://img.shields.io/pypi/dm/cherry-ua.svg?style=for-the-badge)](https://pypi.python.org/pypi/cherry-ua)
 [![Code Coverage][code-coverage-shield]][code-coverage-url]
 [![Pypi][pypi-shield]][pypi-url]
 [![Contributors][contributors-shield]][contributors-url]
