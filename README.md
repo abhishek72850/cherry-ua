@@ -1,6 +1,6 @@
-[![Build][build-shield]][build-url]
-[![Downloads](https://img.shields.io/pypi/dm/cherry-ua.svg?style=for-the-badge)](https://pypi.python.org/pypi/cherry-ua)
-[![Code Coverage][code-coverage-shield]][code-coverage-url]
+<!-- [![Build][build-shield]][build-url] -->
+[![Downloads](https://static.pepy.tech/badge/cherry-ua)](https://pypi.python.org/pypi/cherry-ua)
+<!-- [![Code Coverage][code-coverage-shield]][code-coverage-url] -->
 [![Pypi][pypi-shield]][pypi-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
